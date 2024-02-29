@@ -1,11 +1,10 @@
 import Header from "../global/header/Header";
-import Hero from "./sections/Hero";
+import Opening from "./sections/hero/Opening";
 
 function Home() {
   return <main>
     <Header />
-    <Hero />
-    <div>here is the next section</div>
+    <Opening />
   </main>
 }
 

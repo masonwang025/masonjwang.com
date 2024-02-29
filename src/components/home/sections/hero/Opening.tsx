@@ -1,9 +1,10 @@
 "use client";
+import ScrambleText from "@/components/global/util/ScrambleText";
 import { ArrowDownIcon } from "@heroicons/react/16/solid";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function Hero() {
+function Opening() {
   const controls = useAnimation();
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,17 +40,15 @@ function Hero() {
       initial={{ justifyContent: "center", height: "100vh", color: "white" }}
       transition={{ duration: 0.5 }}
     >
-      <motion.p layout className="header text-xl text-center">What is the meaning of life?</motion.p>
+      <motion.div layout className="header text-xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.4, tick: 9 }} /></motion.div>
       <AnimatePresence>
         {!scrolled && (
           <motion.div
             className="absolute bottom-10 cursor-pointer"
             onClick={startAnimation}
             initial={{ opacity: 0 }}
-            // fade in on start
-            animate={{ opacity: 2 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            animate={{ opacity: 2, transition: { duration: 0.5, delay: 3 } }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
           >
             <ArrowDownIcon className="h-8 w-8" color="white" />
           </motion.div>
@@ -59,4 +58,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Opening;
