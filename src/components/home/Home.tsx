@@ -5,6 +5,7 @@ function Home() {
   return <main>
     <Header />
     <Hero />
+    <div className="h-20">here is the next section</div>
   </main>
 }
 
