@@ -30,8 +30,12 @@ function Hero() {
       startAnimation();
     };
 
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
+    window.addEventListener("wheel", handleScroll, { passive: false });
+    window.addEventListener("touchmove", handleScroll, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchmove", handleScroll);
+    };
   }, [controls, scrolled]); // Include scrolled in the dependency array
 
   return (
@@ -42,7 +46,7 @@ function Hero() {
       initial={{ justifyContent: "center", height: "100vh", color: "white" }}
       transition={{ duration: 0.5 }}
     >
-      <motion.div layout className="header text-xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.4, tick: 9 }} /></motion.div>
+      <motion.div layout className="header text-xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.6, tick: 9 }} /></motion.div>
       <AnimatePresence>
         {!scrolled && (
           <motion.div
