@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-.sans {
-  font-family: var(--font-sans), sans-serif;
-}
-
 h1,
 h2,
 h3,
@@ -15,4 +10,9 @@ h5,
 h6,
 .serif {
   font-family: var(--font-serif), serif;
+}
+
+html,
+.sans {
+  font-family: var(--font-sans), sans-serif;
 }
