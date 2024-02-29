@@ -4,7 +4,7 @@ import { ArrowDownIcon } from "@heroicons/react/16/solid";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function Opening() {
+function Hero() {
   const controls = useAnimation();
   const [scrolled, setScrolled] = useState(false);
 
@@ -17,30 +17,32 @@ function Opening() {
         transition: { duration: 1 }
       });
       setScrolled(true);
+      document.body.style.overflow = "auto";
     }
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        startAnimation();
-      }
+    // overflow: hidden
+    document.body.style.overflow = "hidden";
+
+    const handleScroll = (e: any) => {
+      e.preventDefault();
+      startAnimation();
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleScroll);
+    return () => window.removeEventListener("wheel", handleScroll);
   }, [controls, scrolled]); // Include scrolled in the dependency array
 
   return (
     <motion.div
-      layout
       className="wrapper mx-auto flex flex-col justify-center items-center text-white"
       style={{ height: "100vh" }}
       animate={controls}
       initial={{ justifyContent: "center", height: "100vh", color: "white" }}
       transition={{ duration: 0.5 }}
     >
-      <motion.div layout className="header text-2xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.4, tick: 9 }} /></motion.div>
+      <motion.div layout className="header text-xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.4, tick: 9 }} /></motion.div>
       <AnimatePresence>
         {!scrolled && (
           <motion.div
@@ -58,4 +60,4 @@ function Opening() {
   );
 }
 
-export default Opening;
+export default Hero;
