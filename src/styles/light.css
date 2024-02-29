@@ -1,0 +1,4 @@
+html,
+body {
+  @apply bg-theme-offwhite text-black;
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Open_Sans } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
+import "@/styles/dark.css";
 
 const serif = Playfair_Display({
   variable: '--font-serif',
