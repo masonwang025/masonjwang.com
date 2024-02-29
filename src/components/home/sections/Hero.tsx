@@ -10,12 +10,12 @@ function Hero() {
   const startAnimation = () => {
     if (!scrolled) {
       controls.start({
-        y: 100,
         height: "auto",
-        color: "#D3D3D3", // Light gray color
-        transition: { duration: 0.5 } // Ensure you define a transition duration
+        color: "#D3D3D3",
+        marginTop: "5rem",
+        transition: { duration: 1 }
       });
-      setScrolled(true); // Mark as scrolled to prevent re-triggering
+      setScrolled(true);
     }
   };
 
@@ -33,7 +33,7 @@ function Hero() {
   return (
     <motion.div
       layout
-      className="container mx-auto flex flex-col justify-center items-center text-white"
+      className="wrapper mx-auto flex flex-col justify-center items-center text-white"
       style={{ height: "100vh" }}
       animate={controls}
       initial={{ justifyContent: "center", height: "100vh", color: "white" }}
@@ -45,7 +45,9 @@ function Hero() {
           <motion.div
             className="absolute bottom-10 cursor-pointer"
             onClick={startAnimation}
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            // fade in on start
+            animate={{ opacity: 2 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
