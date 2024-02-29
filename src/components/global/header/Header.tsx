@@ -1,5 +1,5 @@
 function Header() {
-  return <header className="container mx-auto flex py-4 flex-row justify-between">
+  return <header className="absolute top-0 right-0 left-0 container mx-auto py-9 flex flex-row justify-between">
     <div>
       <p className="text-xl font-semibold uppercase">Mason Wang</p>
     </div>
