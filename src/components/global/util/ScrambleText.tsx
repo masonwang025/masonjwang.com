@@ -1,3 +1,4 @@
+"use client";
 import { useScramble } from "use-scramble";
 
 function ScrambleText({
