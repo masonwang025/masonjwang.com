@@ -1,7 +1,7 @@
 function Header() {
-  return <header className="absolute top-0 right-0 left-0 container mx-auto py-9 flex flex-row justify-between">
+  return <header className="header absolute top-0 right-0 left-0 container mx-auto py-9 flex flex-row justify-between">
     <div>
-      <p className="text-xl font-semibold uppercase">Mason Wang</p>
+      <h1 className="text-xl font-semibold uppercase">Mason Wang</h1>
     </div>
     <nav>
       <ul className="flex flex-row space-x-4">

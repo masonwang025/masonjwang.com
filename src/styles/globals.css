@@ -2,17 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.serif {
-  font-family: var(--font-serif), serif;
+/* FONTS: because this is not a variable font, we've imported all the different types */
+
+.header,
+.header.font-normal {
+  font-family: var(--font-header-400), monospace;
+}
+.header.font-medium {
+  font-family: var(--font-header-500), monospace;
+}
+.header.font-semibold {
+  font-family: var(--font-header-600), monospace;
+}
+.header.font-bold {
+  font-family: var(--font-header-700), monospace;
 }
 
-html,
-.sans {
-  font-family: var(--font-sans), sans-serif;
+body,
+.body,
+.body.font-normal {
+  font-family: var(--font-body-400), sans-serif;
+}
+.body.font-medium {
+  font-family: var(--font-body-500), sans-serif;
+}
+.body.font-semibold {
+  font-family: var(--font-body-600), sans-serif;
+}
+.body.font-bold {
+  font-family: var(--font-body-700), sans-serif;
 }

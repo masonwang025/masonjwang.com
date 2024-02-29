@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Open_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/dark.css";
-
-const serif = Playfair_Display({
-  variable: '--font-serif',
-  subsets: ['latin']
-})
-const sans = Open_Sans({
-  variable: '--font-sans',
-  subsets: ['latin']
-})
+// Import the font variables
+import {
+  header400, header500, header600, header700,
+  body400, body500, body600, body700
+} from '../lib/constants/fonts';
 
 export const metadata: Metadata = {
   title: "Mason Wang",
@@ -22,8 +17,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Construct a string with all font variables to apply to the className
+  const fontClasses = [
+    header400, header500, header600, header700,
+    body400, body500, body600, body700
+  ].map(font => 'variable' in font ? font.variable : '').join(' ');
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={fontClasses}>
       <body>{children}</body>
     </html>
   );
