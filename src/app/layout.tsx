@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Playfair_Display, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const serif = Playfair_Display({
+  variable: '--font-serif',
+  subsets: ['latin']
+})
+const sans = Open_Sans({
+  variable: '--font-sans',
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Mason Wang",
@@ -15,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
