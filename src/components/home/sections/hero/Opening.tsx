@@ -48,7 +48,7 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
       <motion.div layout className="header hero-font text-center">
         <ScrambleText text="What is the meaning of life?" settings={{ speed: 0.6, tick: 9, step: 5 }} />
       </motion.div>
-      {!scrolled && <DownArrow onClickHandler={startAnimation} showDelay={2.2} />}
+      <DownArrow visible={!scrolled} onClickHandler={startAnimation} showDelay={2.2} />
     </motion.div>
   );
 }

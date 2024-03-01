@@ -4,6 +4,11 @@
 
 /* FONTS: because this is not a variable font, we've imported all the different types */
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .header,
 .header.font-normal {
   font-family: var(--font-header-400), monospace;
