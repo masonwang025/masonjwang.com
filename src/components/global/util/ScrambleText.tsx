@@ -19,9 +19,9 @@ function ScrambleText({
 }) {
 
   const {
-    speed = 0.4,
-    tick = 3,
-    step = 5,
+    speed = 0.8,
+    tick = 2,
+    step = 3,
     overflow = false,
     scramble = 10,
     chance = 0.8,

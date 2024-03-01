@@ -1,4 +1,5 @@
 html,
 body {
-  @apply bg-black text-white;
+  @apply text-white;
+  background-color: #111115;
 }

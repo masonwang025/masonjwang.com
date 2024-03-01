@@ -3,6 +3,7 @@ import ScrambleText from "@/components/global/util/ScrambleText";
 import { ArrowDownIcon } from "@heroicons/react/16/solid";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import DownArrow from "./DownArrow";
 
 function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (scrolled: boolean) => void }) {
   const controls = useAnimation();
@@ -34,7 +35,7 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
       window.removeEventListener("wheel", handleScroll);
       window.removeEventListener("touchmove", handleScroll);
     };
-  }, [controls, scrolled]); // Include scrolled in the dependency array
+  }, [controls, scrolled]);
 
   return (
     <motion.div
@@ -44,20 +45,10 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
       initial={{ justifyContent: "center", height: "100vh", color: "white" }}
       transition={{ duration: 0.5 }}
     >
-      <motion.div layout className="header text-md md:text-lg lg:text-xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.6, tick: 9 }} /></motion.div>
-      <AnimatePresence>
-        {!scrolled && (
-          <motion.div
-            className="absolute bottom-10 md:bottom-14 xl:bottom-20 cursor-pointer"
-            onClick={startAnimation}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 2, transition: { duration: 0.5, delay: 2.2 } }}
-            exit={{ opacity: 0, transition: { duration: 0.5 } }}
-          >
-            <ArrowDownIcon className="h-8 w-8" color="white" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div layout className="header hero-font text-center">
+        <ScrambleText text="What is the meaning of life?" settings={{ speed: 0.6, tick: 9, step: 5 }} />
+      </motion.div>
+      {!scrolled && <DownArrow onClickHandler={startAnimation} showDelay={2.2} />}
     </motion.div>
   );
 }
