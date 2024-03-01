@@ -58,16 +58,16 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
   }, [canLeaveHero]);
 
   return (
-    <div className="wrapper header hero-font pt-10 pb-16 md:pb-24 lg:pb-32">
+    <div className="wrapper header text-title pt-10 pb-16 md:pb-24 lg:pb-32">
       <div className="header text-md md:text-lg lg:text-xl text-gray-400">
         {visibleElements[0] && <ScrambleText text="My best friend told me:" />}
       </div>
-      <div className="flex flex-col justify-between my-[10vh] h-[22vh] md:my-[15vh] md:h-[25vh] ">
+      <div className="uppercase flex flex-col justify-between my-[10vh] h-[22vh] md:my-[15vh] md:h-[25vh] ">
         {visibleElements[1] ? <div className="text-left"><ScrambleText text={texts[0]} /></div> : <div className="opacity-0">{texts[0]}</div>}
         {visibleElements[2] ? <div className="text-center"><ScrambleText text={texts[1]} /></div> : <div className="opacity-0">{texts[1]}</div>}
         {visibleElements[3] ? <div className="text-right"><ScrambleText text={texts[2]} /></div> : <div className="opacity-0">{texts[2]}</div>}
       </div>
-      {visibleElements[4] ? <div className="text-center"><ScrambleText text={texts[3]} /></div> : <div className="opacity-0">{texts[3]}</div>}
+      {visibleElements[4] ? <div className="uppercase text-center"><ScrambleText text={texts[3]} /></div> : <div className="opacity-0">{texts[3]}</div>}
       {canLeaveHero && <DownArrow visible={!heroDone} onClickHandler={finishHero} showDelay={0.5} />}
     </div>
   );

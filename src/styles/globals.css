@@ -25,16 +25,16 @@ body {
 
 body,
 .body,
-.body.font-normal {
+.body .font-normal {
   font-family: var(--font-body-400), sans-serif;
 }
-.body.font-medium {
+.body .font-medium {
   font-family: var(--font-body-500), sans-serif;
 }
-.body.font-semibold {
+.body .font-semibold {
   font-family: var(--font-body-600), sans-serif;
 }
-.body.font-bold {
+.body .font-bold {
   font-family: var(--font-body-700), sans-serif;
 }
 
@@ -42,6 +42,6 @@ body,
   @apply container mx-auto px-4;
 }
 
-.hero-font {
+.text-title {
   @apply text-base md:text-lg lg:text-xl;
 }
