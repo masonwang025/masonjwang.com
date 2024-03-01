@@ -1,15 +1,44 @@
+import React, { useState, useEffect } from 'react';
 import ScrambleText from "@/components/global/util/ScrambleText";
 
 function BornShineDie() {
-  return (<div className="wrapper header">
-    <div className="text-xl text-gray-400"><ScrambleText settings={{ speed: 0.6, tick: 9 }} delay={1.5} text="My best friend told me:" /></div>
-    <div className="text-2xl flex flex-col space-y-12 flex flex-col justify-center">
-      <div className="text-left"><ScrambleText settings={{ speed: 0.6, tick: 9 }} delay={3.5} text="We are born," /></div>
-      <div className="text-center"><ScrambleText settings={{ speed: 0.6, tick: 9 }} delay={5} text="we have a chance to shine," /></div>
-      <div className="text-right"><ScrambleText settings={{ speed: 0.6, tick: 9 }} delay={6.5} text="and then we die." /></div>
-      <div className="text-center"><ScrambleText settings={{ speed: 0.6, tick: 9 }} delay={8} text="So it's about maximizing that shine." /></div>
+  // Define an array of delays in seconds
+  const delaysInSeconds = [1, 2.8, 4.5, 7, 9];
+  // Convert seconds to milliseconds for setTimeout
+  const delaysInMilliseconds = delaysInSeconds.map(seconds => seconds * 1000);
+
+  // State to control the visibility of each ScrambleText component
+  const [visibleTexts, setVisibleTexts] = useState([false, false, false, false]);
+
+  useEffect(() => {
+    // Set timeouts based on the specified delays to update the visibility state
+    const timers = delaysInMilliseconds.map((delay, index) =>
+      setTimeout(() => {
+        setVisibleTexts(prevState => {
+          const newState = [...prevState];
+          newState[index] = true;
+          return newState;
+        });
+      }, delay)
+    );
+
+    // Cleanup function to clear all timeouts when the component unmounts
+    return () => timers.forEach(timer => clearTimeout(timer));
+  }, []); // Empty dependency array ensures this effect runs only once on mount
+
+  return (
+    <div className="wrapper header py-10">
+      <div className="text-xl text-gray-400">
+        {visibleTexts[0] && <ScrambleText text="My best friend told me:" />}
+      </div>
+      <div className="text-2xl flex flex-col space-y-12 justify-center">
+        {visibleTexts[1] && <div className="text-left"><ScrambleText text="We are born," /></div>}
+        {visibleTexts[2] && <div className="text-center"><ScrambleText text="we have a chance to shine," /></div>}
+        {visibleTexts[3] && <div className="text-right"><ScrambleText text="and then we die." /></div>}
+        {visibleTexts[4] && <div className="text-center"><ScrambleText text="So it's about maximizing that shine." /></div>}
+      </div>
     </div>
-  </div>)
+  );
 }
 
 export default BornShineDie;

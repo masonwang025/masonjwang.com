@@ -1,12 +1,10 @@
 "use client";
+import { useRef } from "react";
 import { useScramble } from "use-scramble";
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
 
 function ScrambleText({
   text,
   settings = {},
-  delay
 }: {
   text: string,
   settings?: {
@@ -18,13 +16,11 @@ function ScrambleText({
     chance?: number,
     overdrive?: boolean,
   },
-  delay?: number,
 }) {
-  const [startScrambling, setStartScrambling] = useState(false);
 
   const {
-    speed = 0.3,
-    tick = 5,
+    speed = 0.4,
+    tick = 3,
     step = 5,
     overflow = false,
     scramble = 10,
@@ -33,7 +29,6 @@ function ScrambleText({
   } = settings;
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   const scrambleSettings = {
     text,
@@ -49,28 +44,11 @@ function ScrambleText({
   const { ref: scrambleRef } = useScramble(scrambleSettings);
 
   const setRef = (node: any) => {
-    if (startScrambling) {
-      scrambleRef.current = node;
-      ref.current = node;
-    } else {
-      ref.current = node;
-    }
+    scrambleRef.current = node;
+    ref.current = node;
   };
 
-  // as soon as isInView is true, start the delay timer and then set startScrambling to true
-  useEffect(() => {
-    if (isInView && !startScrambling) {
-      const timer = setTimeout(() => {
-        setStartScrambling(true);
-      }, delay ? delay * 1000 : 0);
-      return () => clearTimeout(timer);
-    }
-  }, [isInView]);
-
-  if (startScrambling)
-    return <p ref={setRef} />
-  else
-    return <p ref={setRef} />
+  return <p ref={setRef} />
 }
 
 export default ScrambleText;

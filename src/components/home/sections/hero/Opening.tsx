@@ -49,8 +49,8 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
       <AnimatePresence>
         {!scrolled && (
           <motion.div
-            className="absolute bottom-10 md:bottom-14 xl:bottom-20"
-            // onClick={startAnimation}
+            className="absolute bottom-10 md:bottom-14 xl:bottom-20 cursor-pointer"
+            onClick={startAnimation}
             initial={{ opacity: 0 }}
             animate={{ opacity: 2, transition: { duration: 0.5, delay: 2.2 } }}
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
