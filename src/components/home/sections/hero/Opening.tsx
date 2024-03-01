@@ -4,15 +4,14 @@ import { ArrowDownIcon } from "@heroicons/react/16/solid";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function Hero() {
+function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (scrolled: boolean) => void }) {
   const controls = useAnimation();
-  const [scrolled, setScrolled] = useState(false);
 
   const startAnimation = () => {
     if (!scrolled) {
       controls.start({
         height: "auto",
-        color: "#D3D3D3",
+        color: "#9ca3af",
         marginTop: "5rem",
         transition: { duration: 1 }
       });
@@ -50,10 +49,10 @@ function Hero() {
       <AnimatePresence>
         {!scrolled && (
           <motion.div
-            className="absolute bottom-10 cursor-pointer"
-            onClick={startAnimation}
+            className="absolute bottom-10 md:bottom-14 xl:bottom-20"
+            // onClick={startAnimation}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 2, transition: { duration: 0.5, delay: 3 } }}
+            animate={{ opacity: 2, transition: { duration: 0.5, delay: 2.2 } }}
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
           >
             <ArrowDownIcon className="h-8 w-8" color="white" />
@@ -64,4 +63,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Opening;
