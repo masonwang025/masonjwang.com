@@ -17,12 +17,12 @@ function DownArrow({ visible, onClickHandler, showDelay }: { visible: boolean, o
         animate={{ opacity: 2, transition: { duration: 0.5, delay: showDelay } }}
         exit={exit}
       >
-        <ArrowDownIcon className="h-8 w-8 mx-auto md:h-10 md:w-10 mb-8 md:mb-12 xl:mb-20" color="white" />
+        <ArrowDownIcon className="h-8 w-8 mx-auto md:h-10 md:w-10 mb-6 sm:mb-8 md:mb-12 xl:mb-20" color="white" />
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 2, transition: { duration: 0.5, delay: showDelay } }}
-        className="absolute w-screen bottom-0 left-0 h-36 bg-gradient-to-t from-[#ffffff19] to-transparent"
+        className="absolute w-screen bottom-0 left-0 h-24 md:h-36 bg-gradient-to-t from-[#ffffff21] md:from-[#ffffff19] to-transparent"
         exit={exit}
       ></motion.div>
     </motion.div>}
