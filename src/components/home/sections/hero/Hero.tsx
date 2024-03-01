@@ -8,7 +8,7 @@ function Hero({ heroDone, setHeroDone }: { heroDone: boolean, setHeroDone: (hero
   const [canLeaveHero, setCanLeaveHero] = useState(false); // after all text is done
 
   return <>
-    <Opening scrolled={scrolled} setScrolled={setScrolled} />
+    <Opening scrolled={scrolled} setScrolled={setScrolled} shouldAllowScroll={canLeaveHero} />
     {scrolled && <BornShineDie
       canLeaveHero={canLeaveHero}
       setCanLeaveHero={setCanLeaveHero}

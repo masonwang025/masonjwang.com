@@ -7,12 +7,12 @@ function DownArrow({ visible, onClickHandler, showDelay }: { visible: boolean, o
   }
 
   return <AnimatePresence>
-    {visible && <motion.div className="absolute w-screen bottom-0 left-0"
+    {visible && <motion.div className="cursor-pointer absolute w-screen bottom-0 left-0"
+      onClick={onClickHandler}
       initial={{ opacity: 0 }}
       animate={{ opacity: 2, transition: { duration: 0.5, delay: showDelay } }} exit={exit}>
       <motion.div
         className="cursor-pointer bottom-0 mx-auto"
-        onClick={onClickHandler}
         initial={{ opacity: 0 }}
         animate={{ opacity: 2, transition: { duration: 0.5, delay: showDelay } }}
         exit={exit}

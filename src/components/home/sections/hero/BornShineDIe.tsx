@@ -30,9 +30,32 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
 
   useEffect(() => {
     // set hero done after the longest delay
-    const timer = setTimeout(() => setCanLeaveHero(true), Math.max(...delaysInMilliseconds) - 500);
+    const timer = setTimeout(() => setCanLeaveHero(true), Math.max(...delaysInMilliseconds));
     return () => clearTimeout(timer);
   }, []);
+
+  const finishHero = () => {
+    setHeroDone(true);
+    setCanLeaveHero(true);
+    document.body.style.overflow = "auto";
+  }
+
+  // allow user to leave hero section after all text is done
+  useEffect(() => {
+    if (!canLeaveHero) return;
+
+    const handleFinish = (e: Event) => {
+      finishHero();
+    };
+
+    window.addEventListener("wheel", handleFinish);
+    window.addEventListener("touchmove", handleFinish);
+
+    return () => {
+      window.removeEventListener("wheel", handleFinish);
+      window.removeEventListener("touchmove", handleFinish);
+    };
+  }, [canLeaveHero]);
 
   return (
     <div className="wrapper header hero-font py-10">
@@ -45,7 +68,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
         {visibleElements[3] ? <div className="text-right"><ScrambleText text={texts[2]} /></div> : <div className="opacity-0">{texts[2]}</div>}
       </div>
       {visibleElements[4] ? <div className="text-center"><ScrambleText text={texts[3]} /></div> : <div className="opacity-0">{texts[3]}</div>}
-      {canLeaveHero && <DownArrow visible={!heroDone} onClickHandler={() => setHeroDone(true)} showDelay={2.2} />}
+      {canLeaveHero && <DownArrow visible={!heroDone} onClickHandler={finishHero} showDelay={0.5} />}
     </div>
   );
 }

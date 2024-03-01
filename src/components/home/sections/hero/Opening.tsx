@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import DownArrow from "./DownArrow";
 
-function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (scrolled: boolean) => void }) {
+function Opening({ scrolled, setScrolled, shouldAllowScroll }: { scrolled: boolean, setScrolled: (scrolled: boolean) => void, shouldAllowScroll: boolean }) {
   const controls = useAnimation();
 
   const startAnimation = () => {
@@ -20,14 +20,15 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
     }
   };
 
-  useEffect(() => {
-    // overflow: hidden
-    document.body.style.overflow = "hidden";
+  const handleScroll = (e: any) => {
+    if (shouldAllowScroll) return;
+    e.preventDefault();
+    startAnimation();
+  };
 
-    const handleScroll = (e: any) => {
-      e.preventDefault();
-      startAnimation();
-    };
+  useEffect(() => {
+    if (shouldAllowScroll) return;
+    document.body.style.overflow = "hidden";
 
     window.addEventListener("wheel", handleScroll, { passive: false });
     window.addEventListener("touchmove", handleScroll, { passive: false });
@@ -35,7 +36,7 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
       window.removeEventListener("wheel", handleScroll);
       window.removeEventListener("touchmove", handleScroll);
     };
-  }, [controls, scrolled]);
+  }, [scrolled, shouldAllowScroll]);
 
   return (
     <motion.div
