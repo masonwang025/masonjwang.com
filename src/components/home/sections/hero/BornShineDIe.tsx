@@ -10,7 +10,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
 
   // State to control the visibility of each ScrambleText component
   const [visibleElements, setVisibleElements] = useState([false, false, false, false]);
-  const texts = ["“We are born,", "we have a chance to shine,", "and then we die.", "And life's about maximizing that shine.”"];
+  const texts = ["“We are born,", "we have a chance to shine,", "and then we die.", "Life's about maximizing that shine.”"];
 
   useEffect(() => {
     // Set timeouts based on the specified delays to update the visibility state
@@ -58,7 +58,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
   }, [canLeaveHero]);
 
   return (
-    <div className="wrapper header hero-font py-10">
+    <div className="wrapper header hero-font pt-10 pb-16 md:pb-24 lg:pb-32">
       <div className="header text-md md:text-lg lg:text-xl text-gray-400">
         {visibleElements[0] && <ScrambleText text="My best friend told me:" />}
       </div>
