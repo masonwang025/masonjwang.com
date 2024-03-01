@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ScrambleText from "@/components/global/util/ScrambleText";
 
-function BornShineDie() {
+function BornShineDie({ heroDone, setHeroDone }: { heroDone: boolean, setHeroDone: (heroDone: boolean) => void }) {
   // Define an array of delays in seconds
   const delaysInSeconds = [1, 2.8, 4.5, 7, 9];
   // Convert seconds to milliseconds for setTimeout
@@ -28,10 +28,10 @@ function BornShineDie() {
 
   return (
     <div className="wrapper header py-10">
-      <div className="text-xl text-gray-400">
+      <div className="header text-md md:text-lg lg:text-xl text-gray-400">
         {visibleTexts[0] && <ScrambleText text="My best friend told me:" />}
       </div>
-      <div className="text-2xl flex flex-col space-y-12 justify-center">
+      <div className="text-lg md:text-xl lg:text-2xl flex flex-col space-y-12 justify-center">
         {visibleTexts[1] && <div className="text-left"><ScrambleText text="We are born," /></div>}
         {visibleTexts[2] && <div className="text-center"><ScrambleText text="we have a chance to shine," /></div>}
         {visibleTexts[3] && <div className="text-right"><ScrambleText text="and then we die." /></div>}

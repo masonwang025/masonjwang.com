@@ -1,8 +1,8 @@
 "use client";
 import ScrambleText from "@/components/global/util/ScrambleText";
 import { ArrowDownIcon } from "@heroicons/react/16/solid";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (scrolled: boolean) => void }) {
   const controls = useAnimation();
@@ -16,7 +16,6 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
         transition: { duration: 1 }
       });
       setScrolled(true);
-      document.body.style.overflow = "auto";
     }
   };
 
@@ -45,7 +44,7 @@ function Opening({ scrolled, setScrolled }: { scrolled: boolean, setScrolled: (s
       initial={{ justifyContent: "center", height: "100vh", color: "white" }}
       transition={{ duration: 0.5 }}
     >
-      <motion.div layout className="header text-xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.6, tick: 9 }} /></motion.div>
+      <motion.div layout className="header text-md md:text-lg lg:text-xl text-center"><ScrambleText text="What is the meaning of life?" settings={{ speed: 0.6, tick: 9 }} /></motion.div>
       <AnimatePresence>
         {!scrolled && (
           <motion.div
