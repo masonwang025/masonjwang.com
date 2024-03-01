@@ -70,7 +70,7 @@ function ScrambleText({
   if (startScrambling)
     return <p ref={setRef} />
   else
-    return <p ref={setRef} className="opacity-0"></p>
+    return <p ref={setRef} />
 }
 
 export default ScrambleText;
