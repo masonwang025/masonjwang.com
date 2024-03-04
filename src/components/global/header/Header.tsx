@@ -4,9 +4,9 @@ function Header() {
       <h1 className="text-xl font-semibold uppercase">Mason Wang</h1>
     </div>
     <nav>
-      <ul className="flex flex-row space-x-4">
+      <ul className="flex flex-row space-x-4 text-title">
         <li>
-          <a href="#about" className="underline">Me</a>
+          <a className="underline" href="#about">Me</a>
         </li>
         <li>
           <a href="#projects">Writing</a>

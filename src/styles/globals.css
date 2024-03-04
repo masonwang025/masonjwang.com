@@ -43,5 +43,5 @@ body,
 }
 
 .text-title {
-  @apply text-base md:text-lg lg:text-xl;
+  @apply text-base md:text-md;
 }

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        md: "1rem",
+      },
       colors: {
         theme: {
           // black: "#1c1b1b",
