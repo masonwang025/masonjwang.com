@@ -9,10 +9,31 @@ function Welcome() {
     "dance.jpg",
     "caprisun.jpg",
   ]
+  const currentImgs = [
+    "bucket.jpg",
+    "ramen.JPG",
+    "salt.jpg",
+    "vedant.jpg",
+  ]
 
   return <div className="wrapper py-24">
-    <div className="text-center flex flex-col">
+    <div className="text-center text-title header flex flex-col">
       <ImageRow images={babyImgs.map(img => `baby-photos/${img}`)} />
+      <div className="py-24 flex flex-col space-y-2 max-w-2xl mx-auto">
+        <FadeInText>Welcome to my website.</FadeInText>
+        <FadeInText delay={0.1}>I want to share my work, my thoughs, my art – me – with you here.</FadeInText>
+        <FadeInText delay={0.2}>I'm Mason Wang. I love building and creating things, especially out of code.
+        </FadeInText>
+        <FadeInText delay={0.3}>
+          <ul className="italic py-8">
+            <li>Incoming student @ Stanford</li>
+            <li>Research @ <a href="https://oval.cs.stanford.edu/" target="_blank" className="underline">Stanford's Open Virtual Assistant Lab</a></li>
+            <li>Ex-founder @ Hazel (backed by <a target="_blank" href="https://pear.vc/" className="underline">Pear VC</a> and others)</li>
+          </ul>
+        </FadeInText>
+        <FadeInText className="uppercase" delay={0.4}>✲✲✲<br />This website is a work in progress. <br />✲✲✲</FadeInText>
+      </div>
+      <ImageRow images={currentImgs.map(img => `current-photos/${img}`)} />
     </div>
   </div>
 }

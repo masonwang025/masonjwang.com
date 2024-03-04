@@ -5,7 +5,7 @@ const FadeInText = ({ children, delay, className, inPlace }: { children: any, de
   <motion.div
     initial={{ opacity: 0, y: inPlace ? 0 : 20 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1, delay: delay ?? 0 }}
+    transition={{ duration: 0.5, delay: delay ?? 0 }}
     className={className}
   >
     {children}

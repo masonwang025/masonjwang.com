@@ -10,8 +10,8 @@ function Home() {
   const [heroDone, setHeroDone] = useState(isDev); // after hero is done, scrolling functionality is normal
 
   return <main>
+    <Header />
     {!isDev && <div>
-      <Header />
       <Hero heroDone={heroDone} setHeroDone={setHeroDone} />
     </div>}
     {heroDone && <div>

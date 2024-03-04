@@ -6,14 +6,14 @@ function Header() {
     <nav>
       <ul className="flex flex-row space-x-4 text-title">
         <li>
-          <a className="underline" href="#about">Me</a>
+          <div className="underline">Me</div>
         </li>
-        <li>
+        {/* <li>
           <a href="#projects">Writing</a>
         </li>
         <li>
           <a href="#contact">CV</a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   </header>;
