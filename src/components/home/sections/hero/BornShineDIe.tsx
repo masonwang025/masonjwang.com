@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ScrambleText from "@/components/global/util/ScrambleText";
 import DownArrow from './DownArrow';
-import { motion } from "framer-motion";
 import FadeInText from '@/components/global/util/FadeInText';
 
 function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: { canLeaveHero: boolean, setCanLeaveHero: (canLeaveHero: boolean) => void, heroDone: boolean, setHeroDone: (heroDone: boolean) => void }) {

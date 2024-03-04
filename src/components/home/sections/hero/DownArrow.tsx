@@ -10,11 +10,11 @@ function DownArrow({ visible, onClickHandler, showDelay }: { visible: boolean, o
     {visible && <motion.div className="cursor-pointer absolute w-screen bottom-0 left-0"
       onClick={onClickHandler}
       initial={{ opacity: 0 }}
-      animate={{ opacity: 2, transition: { duration: 0.5, delay: showDelay } }} exit={exit}>
+      animate={{ opacity: 1, transition: { duration: 0.5, delay: showDelay } }} exit={exit}>
       <motion.div
         className="cursor-pointer bottom-0 mx-auto"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 2, transition: { duration: 0.5, delay: showDelay } }}
+        animate={{ opacity: 1, transition: { duration: 0.5, delay: showDelay } }}
         exit={exit}
       >
         <ArrowDownIcon className="h-8 w-8 mx-auto md:h-10 md:w-10 mb-6 sm:mb-8 md:mb-12 xl:mb-20" color="white" />

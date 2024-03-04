@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
 import FadeInText from "../global/util/FadeInText";
+import ImageRow from "./ImageRow";
 
 function Welcome() {
-  return <div className="wrapper">
-    <div className="text-center space-y-2 flex flex-col">
+  const babyImgs = [
+    "baby.jpg",
+    "grandma.jpg",
+    "dance.jpg",
+    "caprisun.jpg",
+  ]
 
-      {/* <FadeInText
-        delay={1.5} className="text-title header">
-        <span className="font-semibold">Welcome to my website.</span> I want to share <span className="font-semibold">me</span> — <i>my work, my thoughts, my projects</i> — with you.
-      </FadeInText> */}
+  return <div className="wrapper py-24">
+    <div className="text-center flex flex-col">
+      <ImageRow images={babyImgs.map(img => `baby-photos/${img}`)} />
     </div>
   </div>
 }

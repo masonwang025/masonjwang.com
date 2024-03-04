@@ -5,11 +5,15 @@ import Hero from "./sections/hero/Hero";
 import Welcome from "../welcome/Welcome";
 
 function Home() {
-  const [heroDone, setHeroDone] = useState(false); // after hero is done, scrolling functionality is normal
+  const isDev = false; process.env.NODE_ENV === "development";
+
+  const [heroDone, setHeroDone] = useState(isDev); // after hero is done, scrolling functionality is normal
 
   return <main>
-    <Header />
-    <Hero heroDone={heroDone} setHeroDone={setHeroDone} />
+    {!isDev && <div>
+      <Header />
+      <Hero heroDone={heroDone} setHeroDone={setHeroDone} />
+    </div>}
     {heroDone && <div>
       <Welcome />
     </div>}
