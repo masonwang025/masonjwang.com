@@ -5,9 +5,9 @@ import ImageRow from "./ImageRow";
 function Welcome() {
   const babyImgs = [
     "baby.jpg",
-    "grandma.jpg",
+    "grandma.JPG",
     "dance.jpg",
-    "caprisun.jpg",
+    "caprisun.JPG",
   ]
   const currentImgs = [
     "bucket.jpg",
