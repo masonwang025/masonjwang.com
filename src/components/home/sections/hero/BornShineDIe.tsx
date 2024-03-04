@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ScrambleText from "@/components/global/util/ScrambleText";
 import DownArrow from './DownArrow';
+import { motion } from "framer-motion";
+import FadeInText from '@/components/global/util/FadeInText';
 
 function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: { canLeaveHero: boolean, setCanLeaveHero: (canLeaveHero: boolean) => void, heroDone: boolean, setHeroDone: (heroDone: boolean) => void }) {
   // Define an array of delays in seconds
@@ -63,20 +65,31 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
       <div className="header text-gray-400 text-center">
         {visibleElements[0] && <ScrambleText text="My best friend told me:" />}
       </div>
-      <div className="uppercase flex flex-col min-w-md max-w-md mx-auto mt-4 space-y-3">
-        {visibleElements[1] ? <div className="text-left"><ScrambleText text={texts[0]} /></div> : <div className="opacity-0">{texts[0]}</div>}
-        {visibleElements[2] ? <div className="text-center"><ScrambleText text={texts[1]} /></div> : <div className="opacity-0">{texts[1]}</div>}
-        {visibleElements[3] ? <div className="text-right"><ScrambleText text={texts[2]} /></div> : <div className="opacity-0">{texts[2]}</div>}
+      <div className="uppercase flex flex-col min-w-md max-w-md mx-auto">
+        <div className="flex flex-col space-y-2 py-4">
+          {visibleElements[1] ? <div className="text-left"><ScrambleText text={texts[0]} /></div> : <div className="opacity-0">{texts[0]}</div>}
+          {visibleElements[2] ? <div className="text-center"><ScrambleText text={texts[1]} /></div> : <div className="opacity-0">{texts[1]}</div>}
+          {visibleElements[3] ? <div className="text-right"><ScrambleText text={texts[2]} /></div> : <div className="opacity-0">{texts[2]}</div>}
+        </div>
         {visibleElements[4] ? <div className="text-center mt-4"><ScrambleText text={texts[3]} /></div> : <div className="opacity-0">{texts[3]}</div>}
       </div>
-      {canLeaveHero && <DownArrow text="I want to figure out what that means for me." visible={!heroDone} onClickHandler={finishHero} showDelay={2} />}
       <VerticalSpacer />
+      <FadeInText
+        delay={6.5}
+        className="text-center text-title"
+        inPlace
+      >
+        I want to figure out what that means for me.
+      </FadeInText>
+
+
+      {canLeaveHero && <DownArrow visible={!heroDone} onClickHandler={finishHero} showDelay={2.2} />}
     </div>
   );
 }
 
 // somewhat hacky vertical alignment fix
-const VerticalSpacer = () => <div className="h-[18vh] md:h-[24vh] lg:h-[26vh]" />;
+const VerticalSpacer = () => <div className="h-[15vh] md:h-[22vh] lg:h-[24vh]" />;
 
 export default BornShineDie;
 

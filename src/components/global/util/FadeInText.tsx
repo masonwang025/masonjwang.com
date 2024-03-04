@@ -1,14 +1,14 @@
 
 import { motion } from "framer-motion";
 
-const FadeInText = ({ text, delay, className }: { text: any, delay?: number, className?: string }) => (
+const FadeInText = ({ children, delay, className, inPlace }: { children: any, delay?: number, className?: string, inPlace?: boolean }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: inPlace ? 0 : 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1, delay: delay ?? 0 }}
     className={className}
   >
-    {text}
+    {children}
   </motion.div>
 );
 

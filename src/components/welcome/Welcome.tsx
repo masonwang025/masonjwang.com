@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import FadeInText from "../global/util/FadeInText";
 
 function Welcome() {
-  return <div className="wrapper pt-24 pb-48">
+  return <div className="wrapper">
     <div className="text-center space-y-2 flex flex-col">
-      <FadeInText text="I want to figure out what that means for me." delay={0.5} className="header text-title" />
-      <FadeInText text={<><span className="font-semibold">Welcome to my website.</span> I want to share <span className="font-semibold">me</span> — <i>my work, my thoughts, my projects</i> — with you.</>} delay={1.5} className="lg:text-xl body" />
+
+      {/* <FadeInText
+        delay={1.5} className="text-title header">
+        <span className="font-semibold">Welcome to my website.</span> I want to share <span className="font-semibold">me</span> — <i>my work, my thoughts, my projects</i> — with you.
+      </FadeInText> */}
     </div>
   </div>
 }
