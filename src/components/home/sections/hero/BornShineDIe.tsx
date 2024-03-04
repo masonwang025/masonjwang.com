@@ -10,7 +10,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
 
   // State to control the visibility of each ScrambleText component
   const [visibleElements, setVisibleElements] = useState([false, false, false, false]);
-  const texts = ["“We are born,", "we have a chance to shine,", "and then we die.", "Life's about maximizing that shine.”"];
+  const texts = ["We are born,", "we have a chance to shine,", "and then we die.", "Life's about maximizing that shine."];
 
   useEffect(() => {
     // Set timeouts based on the specified delays to update the visibility state
@@ -69,7 +69,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
         {visibleElements[3] ? <div className="text-right"><ScrambleText text={texts[2]} /></div> : <div className="opacity-0">{texts[2]}</div>}
         {visibleElements[4] ? <div className="text-center mt-4"><ScrambleText text={texts[3]} /></div> : <div className="opacity-0">{texts[3]}</div>}
       </div>
-      {canLeaveHero && <DownArrow visible={!heroDone} onClickHandler={finishHero} showDelay={0.5} />}
+      {canLeaveHero && <DownArrow text="I want to figure out what that means for me." visible={!heroDone} onClickHandler={finishHero} showDelay={2} />}
       <VerticalSpacer />
     </div>
   );
