@@ -77,6 +77,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
         delay={6.5}
         className="text-center text-title"
         inPlace
+        onScrollIntoView={false}
       >
         I want to figure out what that means for me.
       </FadeInText>
