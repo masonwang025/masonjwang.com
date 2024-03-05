@@ -28,7 +28,7 @@ function Opening({ scrolled, setScrolled, shouldAllowScroll }: { scrolled: boole
 
   useEffect(() => {
     if (shouldAllowScroll) return;
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
 
     window.addEventListener("wheel", handleScroll, { passive: false });
     window.addEventListener("touchmove", handleScroll, { passive: false });
@@ -47,7 +47,7 @@ function Opening({ scrolled, setScrolled, shouldAllowScroll }: { scrolled: boole
       transition={{ duration: 0.5 }}
     >
       <motion.div layout className="header text-title text-center">
-        <ScrambleText text="What is the meaning of life?" settings={{ speed: 0.8, tick: 9, step: 5 }} />
+        <ScrambleText text="What is the meaning of our lives?" settings={{ speed: 0.8, tick: 9, step: 5 }} />
       </motion.div>
       <DownArrow visible={!scrolled} onClickHandler={startAnimation} showDelay={2} />
     </motion.div>

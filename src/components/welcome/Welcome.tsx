@@ -10,10 +10,10 @@ function Welcome() {
     "caprisun.JPG",
   ]
   const currentImgs = [
-    "bucket.jpg",
+    "hoop.jpg",
     "ramen.JPG",
+    "cap.jpg",
     "salt.jpg",
-    "vedant.jpg",
   ]
 
   return <div className="wrapper py-24">

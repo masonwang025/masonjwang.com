@@ -9,6 +9,14 @@ body {
   overflow-x: hidden;
 }
 
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 .header,
 .header.font-normal {
   font-family: var(--font-header-400), monospace;

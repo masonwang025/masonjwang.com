@@ -31,7 +31,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
 
   useEffect(() => {
     // set hero done after the longest delay
-    const timer = setTimeout(() => setCanLeaveHero(true), Math.max(...delaysInMilliseconds));
+    const timer = setTimeout(() => setCanLeaveHero(true), 7000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -82,7 +82,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
       </FadeInText>
 
 
-      {canLeaveHero && <DownArrow visible={!heroDone} onClickHandler={finishHero} showDelay={2.2} />}
+      {canLeaveHero && <DownArrow visible={!heroDone} onClickHandler={finishHero} showDelay={0.5} />}
     </div>
   );
 }
