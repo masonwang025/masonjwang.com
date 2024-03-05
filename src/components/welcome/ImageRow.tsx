@@ -1,4 +1,4 @@
-import animateOnScroll from "@/lib/utils/animateOnScroll";
+import animateOnScroll from "@/lib/utils/useAnimateOnScroll";
 import { motion } from "framer-motion";
 
 const ImageRow = ({ images }: { images: string[] }) => {

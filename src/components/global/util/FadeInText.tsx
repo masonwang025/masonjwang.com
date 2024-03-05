@@ -1,8 +1,8 @@
-import animateOnScroll from "@/lib/utils/animateOnScroll";
+import useAnimateOnScroll from "@/lib/utils/useAnimateOnScroll";
 import { motion } from "framer-motion";
 
 const FadeInText = ({ children, delay, className, inPlace, onScrollIntoView = true }: { children: any, delay?: number, className?: string, inPlace?: boolean, onScrollIntoView?: boolean }) => {
-  const { ref, controls } = animateOnScroll(onScrollIntoView);
+  const { ref, controls } = useAnimateOnScroll(onScrollIntoView);
 
   return (
     <motion.div

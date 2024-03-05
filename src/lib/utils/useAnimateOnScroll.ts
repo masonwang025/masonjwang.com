@@ -1,7 +1,7 @@
 import { useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const animateOnScroll = (
+const useAnimateOnScroll = (
   onScrollIntoView: boolean = true,
   animateSettings?: any
 ) => {
@@ -23,4 +23,4 @@ const animateOnScroll = (
   return { ref, controls };
 };
 
-export default animateOnScroll;
+export default useAnimateOnScroll;
