@@ -14,7 +14,13 @@ function Opening({ scrolled, setScrolled, shouldAllowScroll }: { scrolled: boole
         height: "auto",
         color: "#9ca3af",
         marginTop: "5rem",
-        transition: { duration: 1 }
+        transition: {
+          type: "spring",
+          stiffness: 200,
+          damping: 50,
+          mass: 1,
+          duration: 1
+        }
       });
       setScrolled(true);
     }

@@ -1,17 +1,16 @@
-import { motion } from "framer-motion";
 import FadeInText from "../global/util/FadeInText";
 import ImageRow from "./ImageRow";
 
 function Welcome() {
   const babyImgs = [
     "baby.jpg",
-    "grandma.JPG",
+    "grandma.jpg",
     "dance.jpg",
-    "caprisun.JPG",
+    "caprisun.jpg",
   ]
   const currentImgs = [
     "hoop.jpg",
-    "ramen.JPG",
+    "ramen.jpg",
     "cap.jpg",
     "salt.jpg",
   ]

@@ -17,6 +17,22 @@ img {
   -ms-user-select: none;
 }
 
+.cursor-blob {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-image: linear-gradient(#ffffff 10%, #bdbbbd);
+  opacity: 0.5;
+  filter: blur(25px);
+}
+
 .header,
 .header.font-normal {
   font-family: var(--font-header-400), monospace;

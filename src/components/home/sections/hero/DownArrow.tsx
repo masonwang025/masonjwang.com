@@ -22,7 +22,7 @@ function DownArrow({ visible, onClickHandler, showDelay }: { visible: boolean, o
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 2, transition: { duration: 0.5, delay: showDelay } }}
-        className="absolute w-screen bottom-0 left-0 h-24 md:h-36 bg-gradient-to-t from-[#ffffff25] to-transparent"
+        className="clickable absolute w-screen bottom-0 left-0 h-24 md:h-36 bg-gradient-to-t from-[#ffffff25] to-transparent"
         exit={exit}
       ></motion.div>
     </motion.div>}

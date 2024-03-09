@@ -23,8 +23,8 @@ function ScrambleText({
 
   const {
     speed = 0.8,
-    tick = 2,
-    step = 3,
+    tick = 1,
+    step = 2.3,
     overflow = false,
     scramble = 10,
     chance = 0.8,
