@@ -20,7 +20,7 @@ function Welcome() {
       <ImageRow images={babyImgs.map(img => `baby/${img}`)} />
       <div className="py-24 flex flex-col space-y-2 max-w-2xl mx-auto">
         <FadeInText>Welcome to my website.</FadeInText>
-        <FadeInText delay={0.1}>I want to share my work, my thoughs, my art – me – with you here.</FadeInText>
+        <FadeInText delay={0.1}>I want to share my work, my thoughts, my art – me – with you here.</FadeInText>
         <FadeInText delay={0.2}>I'm Mason Wang. I love building and creating things, especially out of code.
         </FadeInText>
         <FadeInText delay={0.3}>
