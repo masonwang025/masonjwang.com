@@ -19,7 +19,7 @@ const CursorBlob: React.FC = () => {
   }, [cursorX, cursorY]);
 
   const springConfig = {
-    damping: 50,
+    damping: 40,
     stiffness: 200,
   };
 
@@ -29,6 +29,10 @@ const CursorBlob: React.FC = () => {
   return (
     <motion.div
       className="cursor-blob"
+      initial={{
+        x: -100,
+        y: -100,
+      }}
       style={{
         position: 'fixed',
         top: 0,

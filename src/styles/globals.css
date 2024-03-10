@@ -28,10 +28,11 @@ img {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  background-image: linear-gradient(#ffffff, #eee);
+  background-image: linear-gradient(#ffffff 50%, #eee);
   opacity: 0.5;
   filter: blur(20px);
 }
+
 .header,
 .header.font-normal {
   font-family: var(--font-header-400), monospace;

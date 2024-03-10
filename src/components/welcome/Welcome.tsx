@@ -30,7 +30,7 @@ function Welcome() {
             <li>Ex-founder @ Hazel (backed by <a target="_blank" href="https://pear.vc/" className="underline">Pear VC</a> and others)</li>
           </ul>
         </FadeInText>
-        <FadeInText className="uppercase" delay={0.4}>✲✲✲<br />This website is a work in progress. <br />✲✲✲</FadeInText>
+        <FadeInText className="uppercase" delay={0.4}>✲ ✲ ✲<br />This website is a work in progress. <br />✲ ✲ ✲</FadeInText>
       </div>
       <ImageRow images={currentImgs.map(img => `current/${img}`)} />
     </div>
