@@ -7,7 +7,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Mason Wang",
-  description: "Learning how to maximize my shine.",
+  description: "Just trying to figure things out. Student + NLP Research @ Stanford. Ex-founder @ Hazel.",
 };
 
 export default function RootLayout({
