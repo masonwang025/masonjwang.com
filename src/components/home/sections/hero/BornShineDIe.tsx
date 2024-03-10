@@ -59,9 +59,9 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
   }, [canLeaveHero]);
 
   return (
-    <div className="wrapper header text-title flex flex-col">
+    <div className="wrapper mono text-title flex flex-col">
       <VerticalSpacer />
-      <div className="header text-gray-400 text-center">
+      <div className="mono text-gray-400 text-center">
         {visibleElements[0] && <ScrambleText text="My best friend told me:" />}
       </div>
       <div className="uppercase flex flex-col min-w-md max-w-md mx-auto">

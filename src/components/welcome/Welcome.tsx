@@ -16,7 +16,7 @@ function Welcome() {
   ]
 
   return <div className="wrapper py-24">
-    <div className="text-center text-title header flex flex-col">
+    <div className="text-center text-title mono flex flex-col">
       <ImageRow images={babyImgs.map(img => `baby/${img}`)} />
       <div className="py-24 flex flex-col space-y-2 max-w-2xl mx-auto">
         <FadeInText>Welcome to my website.</FadeInText>
