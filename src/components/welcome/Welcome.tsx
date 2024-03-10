@@ -17,7 +17,7 @@ function Welcome() {
 
   return <div className="wrapper py-24">
     <div className="text-center text-title header flex flex-col">
-      <ImageRow images={babyImgs.map(img => `baby-photos/${img}`)} />
+      <ImageRow images={babyImgs.map(img => `baby/${img}`)} />
       <div className="py-24 flex flex-col space-y-2 max-w-2xl mx-auto">
         <FadeInText>Welcome to my website.</FadeInText>
         <FadeInText delay={0.1}>I want to share my work, my thoughs, my art – me – with you here.</FadeInText>
@@ -32,7 +32,7 @@ function Welcome() {
         </FadeInText>
         <FadeInText className="uppercase" delay={0.4}>✲✲✲<br />This website is a work in progress. <br />✲✲✲</FadeInText>
       </div>
-      <ImageRow images={currentImgs.map(img => `current-photos/${img}`)} />
+      <ImageRow images={currentImgs.map(img => `current/${img}`)} />
     </div>
   </div>
 }
