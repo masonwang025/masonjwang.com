@@ -30,6 +30,7 @@ img {
   border-radius: 100%;
   background-image: linear-gradient(#ffffff, #eee);
   opacity: 0.5;
+  filter: blur(20px);
 }
 .header,
 .header.font-normal {
