@@ -19,6 +19,7 @@ const Image = ({ src, index }: { src: string, index: number }) => {
       initial={{ opacity: 0, y: 25 }}
       animate={controls}
       transition={{ duration: 0.5, delay: 0.1 * index }}
+      className="bg-gray-400"
     >
       <img src={`/assets/img/landing/${src}`} alt={src} className="w-full h-auto" />
     </motion.div>
