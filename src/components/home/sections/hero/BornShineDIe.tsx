@@ -89,7 +89,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
 }
 
 // somewhat hacky vertical alignment fix
-const VerticalSpacer = () => <div className="h-[15vh] md:h-[18vh] lg:h-[21vh]" />;
+const VerticalSpacer = () => <div className="h-[15vh] md:h-[18vh] xl:h-[21vh]" />;
 
 export default BornShineDie;
 
