@@ -5,7 +5,7 @@ import FadeInText from '@/components/global/util/FadeInText';
 
 function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: { canLeaveHero: boolean, setCanLeaveHero: (canLeaveHero: boolean) => void, heroDone: boolean, setHeroDone: (heroDone: boolean) => void }) {
   // Define an array of delays in seconds
-  const delaysInSeconds = [1, 2, 3, 4, 5, 4];
+  const delaysInSeconds = [0.5, 0.75, 1, 1.25, 1.5, 1.75];
   // Convert seconds to milliseconds for setTimeout
   const delaysInMilliseconds = delaysInSeconds.map(seconds => seconds * 1000);
 
