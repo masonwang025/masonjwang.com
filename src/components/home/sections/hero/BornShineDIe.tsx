@@ -5,7 +5,7 @@ import FadeInText from '@/components/global/util/FadeInText';
 
 function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: { canLeaveHero: boolean, setCanLeaveHero: (canLeaveHero: boolean) => void, heroDone: boolean, setHeroDone: (heroDone: boolean) => void }) {
   // Define an array of delays in seconds
-  const delaysInSeconds = [0.5, 0.75, 1, 1.25, 1.5, 1.75];
+  const delaysInSeconds = [0.5, 1, 1.5, 2, 2.5, 3];
   // Convert seconds to milliseconds for setTimeout
   const delaysInMilliseconds = delaysInSeconds.map(seconds => seconds * 1000);
 
@@ -31,7 +31,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
 
   useEffect(() => {
     // set hero done after the longest delay
-    const timer = setTimeout(() => setCanLeaveHero(true), 7000);
+    const timer = setTimeout(() => setCanLeaveHero(true), delaysInMilliseconds.slice(-1)[0] + 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -74,7 +74,7 @@ function BornShineDie({ canLeaveHero, setCanLeaveHero, heroDone, setHeroDone }: 
       </div>
       <VerticalSpacer />
       <FadeInText
-        delay={6.5}
+        delay={delaysInSeconds.slice(-1)[0] + 0.7}
         className="text-center text-title"
         inPlace
         onScrollIntoView={false}

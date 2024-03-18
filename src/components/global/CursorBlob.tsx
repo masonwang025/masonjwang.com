@@ -28,7 +28,7 @@ const CursorBlob: React.FC = () => {
 
   return (
     <motion.div
-      className="cursor-blob"
+      className="cursor-blob hidden md:block"
       initial={{
         x: -100,
         y: -100,

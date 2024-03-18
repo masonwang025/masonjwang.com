@@ -53,9 +53,9 @@ function Opening({ scrolled, setScrolled, shouldAllowScroll }: { scrolled: boole
       transition={{ duration: 0.5 }}
     >
       <motion.div layout className="mono text-title text-center">
-        <ScrambleText text="What is the meaning of our lives?" settings={{ speed: 0.8, tick: 9, step: 5 }} />
+        <ScrambleText text="What is the meaning of our lives?" settings={{ speed: 0.4, tick: 1, step: 5 }} />
       </motion.div>
-      <DownArrow visible={!scrolled} onClickHandler={startAnimation} showDelay={2} />
+      <DownArrow visible={!scrolled} onClickHandler={startAnimation} showDelay={1.5} />
     </motion.div>
   );
 }
