@@ -1,23 +1,30 @@
 import React from 'react';
 
-const ImageGrid = ({ imageSrcs }: { imageSrcs: string[] }) => {
+const ImageGrid = ({ path, filenames, className }: { path: string, filenames: string[], className?: string }) => {
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {imageSrcs.map((imageSrc, index) => (
-                <Image key={index} filename={imageSrc} />
+        <div className={`grid grid-cols-2 sm:grid-cols-4 gap-3 ${className} max-w-full`}>
+            {filenames.map((filename, index) => (
+                <Image key={index} filename={filename} path={path} />
             ))}
         </div>
     );
 };
 
-const Image = ({ filename }: { filename: string }) => {
+const Image = ({ path, filename }: { path: string, filename: string }) => {
     const getImageSrc = (filename: string) => {
-        return `/assets/img/landing/baby/${filename.includes('.') ? filename : filename + '.png'}`;
+        return `${path}/${filename.includes('.') ? filename : filename + '.jpg'}`;
     };
 
     return (
-        <div className="bg-gray-400" style={{ opacity: 1, transform: 'none' }}>
-            <img src={getImageSrc(filename)} alt={filename} className="w-full h-auto" />
+        <div
+            className="bg-neutral-600 w-full relative"
+            style={{
+                paddingBottom: '100%',
+                backgroundImage: `url(${getImageSrc(filename)})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
         </div>
     );
 };

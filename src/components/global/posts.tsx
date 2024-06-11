@@ -22,8 +22,8 @@ export function BlogPosts() {
             href={`/writing/${post.slug}`}
           >
             <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
+              <p className="text-neutral-400 w-[125px] tabular-nums">
+                {formatDate(post.metadata.publishedAt, false).toLowerCase()}
               </p>
               <p className="text-neutral-100 tracking-tight">
                 {post.metadata.title}
