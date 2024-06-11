@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/global/mdx'
-import { formatDate, getBlogPosts } from '@/app/blog/utils'
+import { formatDate, getBlogPosts } from '@/app/writing/utils'
 import { baseUrl } from '@/app/sitemap'
 
 export async function generateStaticParams() {
@@ -33,7 +33,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${baseUrl}/writing/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -72,10 +72,10 @@ export default function Blog({ params }: { params: { slug: string } }) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            url: `${baseUrl}/writing/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'My Portfolio',
+              name: 'Mason Wang',
             },
           }),
         }}

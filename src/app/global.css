@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* tailwind fixes */
+@layer components {
+  .debug {
+    @apply border border-red-500;
+  }
+
+  .horizontal {
+    @apply flex flex-row;
+  }
+
+  .vertical {
+    @apply flex flex-col;
+  }
+
+  .horizontal.center-v {
+    @apply items-center;
+  }
+
+  .horizontal.center-h {
+    @apply justify-center;
+  }
+
+  .horizontal.center {
+    @apply justify-center items-center;
+  }
+
+  .vertical.center-v {
+    @apply justify-center;
+  }
+
+  .vertical.center-h {
+    @apply items-center;
+  }
+
+  .vertical.center {
+    @apply justify-center items-center;
+  }
+
+  .space-between {
+    @apply justify-between;
+  }
+}
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -149,4 +192,16 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+/* my styles */
+
+@layer base {
+  .link {
+    @apply underline underline-offset-4 decoration-dotted decoration-slate-500 transition-colors hover:underline;
+  }
+}
+
+body {
+  @apply bg-background;
 }
