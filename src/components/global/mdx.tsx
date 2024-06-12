@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
@@ -44,10 +43,6 @@ function CustomLink(props: any) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-function RoundedImage(props: any) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
-}
-
 function Code({ children, ...props }: { children: string, props: any }) {
   let codeHTML = highlight(children)
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
@@ -86,6 +81,21 @@ function createHeading(level: number) {
   return Heading
 }
 
+function Img(props: any) {
+  return (
+    <span className="block !my-12 w-full max-w-md !mx-auto">
+      <img alt={props.alt} {...props} />
+      {props.alt && <span className="block pt-4 !text-center !text-sm !italic !text-neutral-6000">{props.alt}</span>}
+    </span>
+  );
+}
+
+function Divider(props: any) {
+  return (
+    <div className="!w-full !mx-auto !text-center text-xl !mt-10 !mb-8 text-neutral-500 tracking-widest">***</div>
+  )
+}
+
 let components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -93,7 +103,8 @@ let components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  Image: RoundedImage,
+  hr: Divider,
+  img: Img,
   a: CustomLink,
   code: Code,
   Table,
