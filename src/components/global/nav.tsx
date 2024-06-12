@@ -8,13 +8,13 @@ const navItems = {
     name: 'writing',
   },
   'https://alignment.guide': {
-    name: '!!!',
+    name: '!!!!!',
   },
 }
 
 export function Navbar() {
   return (
-    <aside className="-ml-3 tracking-tight">
+    <aside className="-ml-4 tracking-tight">
       <div className="lg:sticky lg:top-20">
         <nav
           className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
@@ -29,7 +29,7 @@ export function Navbar() {
                     href={path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-all hover:text-neutral-200 flex align-middle tracking-widest relative py-1 px-2 m-1"
+                    className="transition-all hover:text-neutral-200 flex align-middle tracking-widest relative py-1 px-3 m-1"
                   >
                     {name}
                   </a>
@@ -39,7 +39,7 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                  className="transition-all hover:text-neutral-200 flex align-middle relative py-1 px-3 m-1"
                 >
                   {name}
                 </Link>
