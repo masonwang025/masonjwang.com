@@ -1,15 +1,15 @@
-import { BlogPosts } from "@/components/global/posts";
 import ImageGrid from "./ImageGrid";
 import Current from "./Current";
 import Previous from "./Previous";
 import Writing from "./Writing";
 import Intro from "./Intro";
+import Layout from "../global/Layout";
 
 export default function Home() {
     return (
-        <section>
+        <Layout>
             <div className="my-8 vertical space-y-2">
-                <h1 className="text-2xl font-semibold tracking-tighter">
+                <h1 className="text-2xl font-semibold">
                     hey! i'm mason wang 😁
                 </h1>
                 <h2 className="text-neutral-400">mwang25@stanford.edu</h2>
@@ -27,6 +27,6 @@ export default function Home() {
 
                 <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "danta", "ground", "uzbek"]} />
             </div>
-        </section>
+        </Layout>
     );
 }

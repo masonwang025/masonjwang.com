@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/global/mdx'
 import { formatDate, getBlogPosts } from '@/app/writing/utils'
 import { baseUrl } from '@/app/sitemap'
+import Hero from '@/components/writing/Hero'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -58,6 +59,11 @@ export default function Blog({ params }: { params: { slug: string } }) {
 
   return (
     <section>
+      <Hero
+        title={post.metadata.title}
+        publishedAt={post.metadata.publishedAt}
+      // image={post.metadata.image}
+      />
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -80,17 +86,11 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+      <div className="bg-background-light max-w-2xl mx-4 lg:mx-auto py-28">
+        <article className="prose">
+          <CustomMDX source={post.content} />
+        </article>
       </div>
-      <article className="prose">
-        <CustomMDX source={post.content} />
-      </article>
     </section>
   )
 }

@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     default: 'Mason Wang',
     template: '%s | Mason Wang',
   },
-  description: 'This is my portfolio.',
+  description: 'I want to share my work, my thoughts, my art - me - with you.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Mason Wang',
+    description: 'I want to share my work, my thoughts, my art - me - with you.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Mason Wang',
     locale: 'en_US',
     type: 'website',
   },
@@ -47,19 +47,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-white bg-background',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+      <body className="antialiased">
+        {children}
       </body>
     </html>
   )
