@@ -7,7 +7,7 @@ function Hero({ title, publishedAt, image }: { title: string, publishedAt: strin
             <div className="vertical center-h space-between h-[calc(100dvh)] py-14 md:py-24">
                 <Link className="text-sm text-neutral-400" href="/writing">← back to writing</Link>
                 <div>
-                    <h1 className="text-balance title font-semibold text-2xl">
+                    <h1 className="text-balance text-center title font-semibold text-2xl">
                         {title}
                     </h1>
                     <div className="mt-2 mb-8 text-sm text-center">
