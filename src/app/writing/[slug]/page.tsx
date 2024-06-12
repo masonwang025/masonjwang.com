@@ -58,7 +58,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <section>
+    <section id="top">
       <Hero
         title={post.metadata.title}
         publishedAt={post.metadata.publishedAt}
@@ -90,6 +90,10 @@ export default function Blog({ params }: { params: { slug: string } }) {
         <article className="prose">
           <CustomMDX source={post.content} />
         </article>
+        {/* back to top link */}
+        <a href="#top" className="text-sm text-neutral-600 hover:text-neutral-800 text-center !mx-auto block">
+          [back to top ↑]
+        </a>
       </div>
     </section>
   )

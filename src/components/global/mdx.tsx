@@ -85,7 +85,7 @@ function Img(props: any) {
   return (
     <span className="block !my-12 w-full max-w-md !mx-auto">
       <img alt={props.alt} {...props} />
-      {props.alt && <span className="block pt-4 !text-center !text-sm !italic !text-neutral-6000">{props.alt}</span>}
+      {props.alt && <span className="block pt-4 !text-center !text-sm !italic !text-neutral-600">{props.alt}</span>}
     </span>
   );
 }
