@@ -86,7 +86,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
-      <div className="bg-background-light max-w-2xl mx-4 lg:mx-auto py-28">
+      <div id="content" className="bg-background-light max-w-2xl mx-4 lg:mx-auto py-8 sm:py-14 md:py-28">
         <article className="prose">
           <CustomMDX source={post.content} />
         </article>

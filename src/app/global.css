@@ -61,5 +61,6 @@
 body,
 html {
   @apply bg-background-dark text-white;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
 }

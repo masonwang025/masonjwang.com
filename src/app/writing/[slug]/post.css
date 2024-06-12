@@ -142,10 +142,6 @@ table {
   white-space: nowrap;
 }
 
-.title {
-  text-wrap: balance;
-}
-
 hr {
   @apply border-neutral-300;
 }
