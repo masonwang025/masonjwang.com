@@ -17,7 +17,14 @@ export default function Home() {
             <div className="vertical space-y-8">
                 <Intro />
 
-                <ImageGrid path="/assets/img/landing/baby" filenames={["baby", "grandma", "dance", "watermelon"]} />
+                {/* hacky fix */}
+                <div className="block sm:hidden">
+                    <ImageGrid path="/assets/img/landing/baby" filenames={["grandma", "dance", "watermelon"]} />
+                </div>
+
+                <div className="hidden sm:block">
+                    <ImageGrid path="/assets/img/landing/baby" filenames={["baby", "grandma", "dance", "watermelon"]} />
+                </div>
 
                 <Current />
 
@@ -25,7 +32,14 @@ export default function Home() {
 
                 <Writing />
 
-                <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "danta", "ground", "uzbek"]} />
+                {/* hacky fix */}
+                <div className="block sm:hidden">
+                    <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "danta", "ground"]} />
+                </div>
+
+                <div className="hidden sm:block">
+                    <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "danta", "ground", "uzbek"]} />
+                </div>
             </div>
         </Layout>
     );

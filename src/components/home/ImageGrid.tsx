@@ -2,7 +2,7 @@ import React from 'react';
 
 const ImageGrid = ({ path, filenames, className }: { path: string, filenames: string[], className?: string }) => {
     return (
-        <div className={`grid grid-cols-2 sm:grid-cols-4 gap-3 ${className} max-w-full`}>
+        <div className={`grid grid-cols-3 sm:grid-cols-4 gap-3 ${className} max-w-full`}>
             {filenames.map((filename, index) => (
                 <Image key={index} filename={filename} path={path} />
             ))}
