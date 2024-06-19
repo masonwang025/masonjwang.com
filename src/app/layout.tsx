@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       'i want to share my work, my thoughts, my art - me - with you.',
     images: [
       {
-        url: '/opengraph-image.jpg',
+        url: '/twitter-image.jpg',
         width: 1233,
         height: 1233,
         alt: 'mason wang',
