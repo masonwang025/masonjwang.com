@@ -9,17 +9,31 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Mason Wang',
-    template: '%s | Mason Wang',
+    default: 'mason wang',
+    template: '%s | mason wang',
   },
-  description: 'I want to share my work, my thoughts, my art - me - with you.',
+  description: 'i want to share my work, my thoughts, my art - me - with you.',
   openGraph: {
-    title: 'Mason Wang',
-    description: 'I want to share my work, my thoughts, my art - me - with you.',
+    title: 'mason wang',
+    description: 'i want to share my work, my thoughts, my art - me - with you.',
     url: baseUrl,
-    siteName: 'Mason Wang',
+    siteName: 'mason wang',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    title: 'mason wang',
+    description:
+      'i want to share my work, my thoughts, my art - me - with you.',
+    images: [
+      {
+        url: '/opengraph-image.jpg',
+        width: 1233,
+        height: 1233,
+        alt: 'mason wang',
+      },
+    ],
+    card: 'summary',
   },
   robots: {
     index: true,
