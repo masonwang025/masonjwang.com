@@ -7,8 +7,8 @@ const navItems = {
   '/writing': {
     name: 'writing',
   },
-  'https://alignment.guide': {
-    name: '!!!!!',
+  'https://tilderesearch.com': {
+    name: '!!!',
   },
 }
 

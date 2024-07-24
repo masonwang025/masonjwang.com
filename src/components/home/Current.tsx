@@ -1,13 +1,13 @@
 function Current() {
     return (<div className="vertical space-y-2">
-        <p><b>current focus</b></p>
-        <p><i>AI alignment</i></p>
-        <ol className="list-decimal ml-4 space-y-1.5">
-            <li>i think this is the most important problem to work on. for now this looks like a) exploring mech interp & W2SG research directions, b) talking to people in the space, and c) figuring out the rest.</li>
-            <li>i'm building <b><a href="https://alignment.guide" target="_blank" className="link">alignment.guide</a></b> to help others navigate the space.</li>
-            <li>just submitted <i>Model Mapping: Decompiling Transformers into Python Programs</i> to ICML.</li>
-        </ol>
-        <p>(p.s. i'm not a doomer i promise)</p>
+        <p><b>currently</b></p>
+        <p><i>~ Tilde (<a href="https://tilderesearch.com" target="_blank" className="link">tilderesearch.com</a>)</i></p>
+        <p>
+            i believe the technical AI alignment problem is the most important problem in the world. i want to make this my life's work.
+        </p>
+        <p>
+            more details coming very soon.
+        </p>
     </div>);
 }
 
