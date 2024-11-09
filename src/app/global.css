@@ -64,3 +64,7 @@ html {
   /* overflow-x: hidden; */
   scroll-behavior: smooth;
 }
+
+::selection {
+  @apply bg-gray-300 text-black;
+}

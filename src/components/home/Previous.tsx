@@ -22,7 +22,7 @@ function Previous() {
             <li>
                 cofounder @ Hazel
                 <ul className="not-italic ml-4 list-disc space-y-1.5 mt-1.5">
-                    <li>deferred freshman year to build Siri for realtors</li>
+                    <li>deferred freshman year to build Siri for realtors, because i've always wanted to help make my mom's work easier</li>
                     <li>raised seed round at 17 (backed by{" "}
                         <a target="_blank" href="https://pear.vc/" className="link">
                             Pear VC
