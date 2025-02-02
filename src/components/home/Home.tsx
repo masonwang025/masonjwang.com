@@ -34,11 +34,11 @@ export default function Home() {
 
                 {/* hacky fix */}
                 <div className="block sm:hidden">
-                    <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "vedant", "ground"]} />
+                    <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "danta", "ground"]} />
                 </div>
 
                 <div className="hidden sm:block">
-                    <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "vedant", "ground", "uzbek"]} />
+                    <ImageGrid path="/assets/img/landing/current" filenames={["hoop", "danta", "ground", "vedant"]} />
                 </div>
             </div>
         </Layout>
